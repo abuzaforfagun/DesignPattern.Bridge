@@ -8,6 +8,7 @@ namespace PublisherOperations
     {
         static void Main(string[] args)
         {
+            //TODO: Need to execute all the printing task in a loop
             Book bookLiveLife = new Book()
             {
                 Title = "How to live life",
