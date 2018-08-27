@@ -10,12 +10,12 @@ namespace PublisherOperations
         static void Main(string[] args)
         {
             IList<IPrintingItem> printingItemQueue = new List<IPrintingItem>();
-            Book bookLiveLife = GenerateBookLiveLife();
+            var bookLiveLife = GenerateBookLiveLife();
             printingItemQueue.Add(bookLiveLife);
-            QuestionBank questionBank = GenerateQuestionBank();
+            IPrintingItem questionBank = GenerateQuestionBank();
 
             printingItemQueue.Add(questionBank);
-            Book bookDesignPatters = GenerateBookDesignPattern();
+            var bookDesignPatters = GenerateBookDesignPattern();
 
             printingItemQueue.Add(bookDesignPatters);
             PrintCollection(printingItemQueue);
@@ -30,7 +30,7 @@ namespace PublisherOperations
             }
         }
 
-        private static Book GenerateBookDesignPattern()
+        private static IPrintingItem GenerateBookDesignPattern()
         {
             return new Book()
             {
@@ -40,7 +40,7 @@ namespace PublisherOperations
             };
         }
 
-        private static QuestionBank GenerateQuestionBank()
+        private static IPrintingItem GenerateQuestionBank()
         {
             return new QuestionBank()
             {
@@ -63,7 +63,7 @@ namespace PublisherOperations
             };
         }
 
-        private static Book GenerateBookLiveLife()
+        private static IPrintingItem GenerateBookLiveLife()
         {
             return new Book()
             {
