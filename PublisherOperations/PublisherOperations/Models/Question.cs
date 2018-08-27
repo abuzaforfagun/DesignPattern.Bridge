@@ -2,7 +2,7 @@
 
 namespace PublisherOperations.Models
 {
-    public class Question : IPrintingItem
+    public class Question : IPrintingItem, IQuestion
     {
         public int QuestionId { get; set; }
         public string QuestionText { get; set; }

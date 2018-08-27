@@ -8,7 +8,7 @@ namespace PublisherOperations.Models
     public class QuestionBank : IPrintingItem
     {
         public string Subject { get; set; }
-        public IEnumerable<Question> Questions { get; set; }
+        public IEnumerable<IQuestion> Questions { get; set; }
         public void Print()
         {
             Console.WriteLine("Printing Question Bank...");
