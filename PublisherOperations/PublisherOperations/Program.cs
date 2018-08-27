@@ -1,4 +1,5 @@
-﻿using PublisherOperations.Models;
+﻿using PublisherOperations.Interface;
+using PublisherOperations.Models;
 using System;
 using System.Collections.Generic;
 
@@ -8,15 +9,16 @@ namespace PublisherOperations
     {
         static void Main(string[] args)
         {
-            //TODO: #P1, Need to execute all the printing task in a loop
+            IList<IPrintingItem> printingItemQueue = new List<IPrintingItem>();
+
             Book bookLiveLife = new Book()
             {
                 Title = "How to live life",
                 Author = "James",
                 Description = "A book on life"
             };
-            bookLiveLife.Print();
-
+            printingItemQueue.Add(bookLiveLife);
+            
             QuestionBank questionBank = new QuestionBank()
             {
                 Subject = "C#",
@@ -36,15 +38,22 @@ namespace PublisherOperations
                     }
                 }
             };
-            questionBank.Print();
 
+
+            printingItemQueue.Add(questionBank);
             Book bookDesignPatters = new Book()
             {
                 Title = "Design Patterns",
                 Author = "GOF",
                 Description = "23 design patterns"
             };
-            bookDesignPatters.Print();
+
+            printingItemQueue.Add(bookDesignPatters);
+
+            foreach (var item in printingItemQueue)
+            {
+                item.Print();
+            }
             Console.Read();
         }
 
