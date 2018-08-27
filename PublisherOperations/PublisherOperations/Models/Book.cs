@@ -11,6 +11,12 @@ namespace PublisherOperations.Models
         public string Author { get; set; }
         public string Description { get; set; }
 
+        public Book(string title, string author, string description)
+        {
+            this.Title = title;
+            this.Author = author;
+            this.Description = description;
+        }
         public void Print()
         {
             Console.WriteLine("Printing Book...");
