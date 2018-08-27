@@ -1,6 +1,8 @@
-﻿namespace PublisherOperations.Models
+﻿using PublisherOperations.Interface;
+
+namespace PublisherOperations.Models
 {
-    public class Question
+    public class Question : IPrintingItem
     {
         public int QuestionId { get; set; }
         public string QuestionText { get; set; }

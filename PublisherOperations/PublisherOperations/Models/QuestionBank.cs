@@ -1,10 +1,11 @@
-﻿using System;
+﻿using PublisherOperations.Interface;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PublisherOperations.Models
 {
-    public class QuestionBank
+    public class QuestionBank : IPrintingItem
     {
         public string Subject { get; set; }
         public IEnumerable<Question> Questions { get; set; }

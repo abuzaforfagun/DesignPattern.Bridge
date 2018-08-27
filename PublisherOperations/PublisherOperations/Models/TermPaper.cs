@@ -1,10 +1,11 @@
-﻿using System;
+﻿using PublisherOperations.Interface;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PublisherOperations.Models
 {
-    public class TermPaper
+    public class TermPaper : IPrintingItem
     {
         public string Title { get; set; }
         public string StudentId { get; set; }
