@@ -11,5 +11,15 @@ namespace PublisherOperations.Models
         public string Refference { get; set; }
         public string Description { get; set; }
 
+        public void Print()
+        {
+            Console.WriteLine("Printing Term Paper...");
+            Console.WriteLine($"Title: {Title}");
+            Console.WriteLine($"Refference: {Refference}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine("-------------------------------");
+
+        }   
+
     }
 }
