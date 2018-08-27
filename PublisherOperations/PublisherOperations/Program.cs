@@ -12,7 +12,7 @@ namespace PublisherOperations
         static void Main(string[] args)
         {
             IList<IPrintingItem> printingItemQueue = new List<IPrintingItem>();
-            var bookLiveLife = new BookFancyFormat("How to live life", "Jhon", "A book on life");
+            var bookLiveLife = new Book("How to live life", "Jhon", "A book on life");
             printingItemQueue.Add(bookLiveLife);
             IPrintingItem questionBank = GenerateQuestionBank();
 
@@ -20,6 +20,9 @@ namespace PublisherOperations
             var bookDesignPatters = new BookFancyFormat("Design Patterns", "GOF", "23 Design Patterns");
 
             printingItemQueue.Add(bookDesignPatters);
+            var bookProgrammingWithCSharp = new BookUppercaseFormat("Programming With C#", "Unknown", "Programming With C#");
+            printingItemQueue.Add(bookProgrammingWithCSharp);
+
             PrintCollection(printingItemQueue);
             Console.Read();
         }
