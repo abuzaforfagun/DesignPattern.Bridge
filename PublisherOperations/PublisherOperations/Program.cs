@@ -37,10 +37,10 @@ namespace PublisherOperations
             return new QuestionBank()
             {
                 Subject = "C#",
-                Questions = new List<Question>()
+                Questions = new List<QuestionFancyFormat>()
                 {
-                    new Question(1, "Current version of C#?", "7"),
-                    new Question(2, "Can we pass mutliple?", "Yes, we can pass though tuple.")
+                    new QuestionFancyFormat(1, "Current version of C#?", "7"),
+                    new QuestionFancyFormat(2, "Can we pass mutliple?", "Yes, we can pass though tuple.")
                 }
             };
         }
