@@ -8,7 +8,7 @@ namespace PublisherOperations
     class Program
     {
 
-        //TODO: #P2, add string formating mechanism while printing
+        //TODO: #P3, fix ugly class explosion
         static void Main(string[] args)
         {
             IList<IPrintingItem> printingItemQueue = new List<IPrintingItem>();
