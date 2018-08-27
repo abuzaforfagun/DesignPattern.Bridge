@@ -8,6 +8,12 @@ namespace PublisherOperations.Models
         public string QuestionText { get; set; }
         public string Answer { get; set; }
 
+        public Question(int questionId, string questionText, string answer)
+        {
+            this.QuestionId = questionId;
+            this.QuestionText = questionText;
+            this.Answer = answer;
+        }
         public void Print()
         {
             System.Console.WriteLine($"Q No: ${QuestionId}");

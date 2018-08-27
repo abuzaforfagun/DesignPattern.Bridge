@@ -10,12 +10,12 @@ namespace PublisherOperations
         static void Main(string[] args)
         {
             IList<IPrintingItem> printingItemQueue = new List<IPrintingItem>();
-            var bookLiveLife = GenerateBookLiveLife();
+            var bookLiveLife = new Book("How to live life", "Jhon", "A book on life");
             printingItemQueue.Add(bookLiveLife);
             IPrintingItem questionBank = GenerateQuestionBank();
 
             printingItemQueue.Add(questionBank);
-            var bookDesignPatters = GenerateBookDesignPattern();
+            var bookDesignPatters = new Book("Design Patterns", "GOF", "23 Design Patterns");
 
             printingItemQueue.Add(bookDesignPatters);
             PrintCollection(printingItemQueue);
@@ -30,16 +30,6 @@ namespace PublisherOperations
             }
         }
 
-        private static IPrintingItem GenerateBookDesignPattern()
-        {
-            return new Book()
-            {
-                Title = "Design Patterns",
-                Author = "GOF",
-                Description = "23 design patterns"
-            };
-        }
-
         private static IPrintingItem GenerateQuestionBank()
         {
             return new QuestionBank()
@@ -47,30 +37,11 @@ namespace PublisherOperations
                 Subject = "C#",
                 Questions = new List<Question>()
                 {
-                    new Question()
-                    {
-                        QuestionId = 1,
-                        QuestionText = "Current version of C#?",
-                        Answer = "7"
-                    },
-                    new Question()
-                    {
-                        QuestionId = 2,
-                        QuestionText = "Can we pass mutliple ",
-                        Answer = "Yes, we can pass though tuple."
-                    }
+                    new Question(1, "Current version of C#?", "7"),
+                    new Question(2, "Can we pass mutliple?", "Yes, we can pass though tuple.")
                 }
             };
         }
-
-        private static IPrintingItem GenerateBookLiveLife()
-        {
-            return new Book()
-            {
-                Title = "How to live life",
-                Author = "James",
-                Description = "A book on life"
-            };
-        }
+        
     }
 }
