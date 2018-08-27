@@ -10,5 +10,13 @@ namespace PublisherOperations.Models
         public string Author { get; set; }
         public string Description { get; set; }
 
+        public void Print()
+        {
+            Console.WriteLine("Printing Book...");
+            Console.WriteLine($"Title: ${Title}");
+            Console.WriteLine($"Author: ${Author}");
+            Console.WriteLine($"Description: ${Description}");
+            Console.WriteLine("-------------------------------");
+        }
     }
 }
