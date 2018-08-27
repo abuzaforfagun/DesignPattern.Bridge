@@ -16,7 +16,7 @@ namespace PublisherOperations
             PrintingItem questionBank = GenerateQuestionBank();
 
             printingItemQueue.Add(questionBank);
-            var bookDesignPatters = new Book("Design Patterns", "GOF", "23 Design Patterns");
+            var bookDesignPatters = new Book("Design Patterns", "GOF", "23 Design Patterns", new UppercaseFormatter());
 
             printingItemQueue.Add(bookDesignPatters);
             var bookProgrammingWithCSharp = new Book("Programming With C#", "Unknown", "Programming With C#");
