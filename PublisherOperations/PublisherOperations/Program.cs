@@ -10,16 +10,39 @@ namespace PublisherOperations
         static void Main(string[] args)
         {
             IList<IPrintingItem> printingItemQueue = new List<IPrintingItem>();
-
-            Book bookLiveLife = new Book()
-            {
-                Title = "How to live life",
-                Author = "James",
-                Description = "A book on life"
-            };
+            Book bookLiveLife = GenerateBookLiveLife();
             printingItemQueue.Add(bookLiveLife);
-            
-            QuestionBank questionBank = new QuestionBank()
+            QuestionBank questionBank = GenerateQuestionBank();
+
+            printingItemQueue.Add(questionBank);
+            Book bookDesignPatters = GenerateBookDesignPattern();
+
+            printingItemQueue.Add(bookDesignPatters);
+            PrintCollection(printingItemQueue);
+            Console.Read();
+        }
+
+        private static void PrintCollection(IList<IPrintingItem> printingItemQueue)
+        {
+            foreach (var item in printingItemQueue)
+            {
+                item.Print();
+            }
+        }
+
+        private static Book GenerateBookDesignPattern()
+        {
+            return new Book()
+            {
+                Title = "Design Patterns",
+                Author = "GOF",
+                Description = "23 design patterns"
+            };
+        }
+
+        private static QuestionBank GenerateQuestionBank()
+        {
+            return new QuestionBank()
             {
                 Subject = "C#",
                 Questions = new List<Question>()
@@ -38,24 +61,16 @@ namespace PublisherOperations
                     }
                 }
             };
-
-
-            printingItemQueue.Add(questionBank);
-            Book bookDesignPatters = new Book()
-            {
-                Title = "Design Patterns",
-                Author = "GOF",
-                Description = "23 design patterns"
-            };
-
-            printingItemQueue.Add(bookDesignPatters);
-
-            foreach (var item in printingItemQueue)
-            {
-                item.Print();
-            }
-            Console.Read();
         }
 
+        private static Book GenerateBookLiveLife()
+        {
+            return new Book()
+            {
+                Title = "How to live life",
+                Author = "James",
+                Description = "A book on life"
+            };
+        }
     }
 }
