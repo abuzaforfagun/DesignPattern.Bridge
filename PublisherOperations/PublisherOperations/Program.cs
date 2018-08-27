@@ -7,7 +7,6 @@ namespace PublisherOperations
     class Program
     {
 
-        //TODO: #P3, fix ugly class explosion
         static void Main(string[] args)
         {
             IList<PrintingItem> printingItemQueue = new List<PrintingItem>();
