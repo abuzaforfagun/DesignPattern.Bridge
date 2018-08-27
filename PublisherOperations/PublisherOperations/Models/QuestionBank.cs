@@ -1,15 +1,14 @@
-﻿using PublisherOperations.Interface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PublisherOperations.Models
 {
-    public class QuestionBank : IPrintingItem
+    public class QuestionBank : PrintingItem
     {
         public string Subject { get; set; }
         public IEnumerable<IQuestion> Questions { get; set; }
-        public void Print()
+        public override void Print()
         {
             Console.WriteLine("Printing Question Bank...");
             Console.WriteLine($"Subject: {Subject}");

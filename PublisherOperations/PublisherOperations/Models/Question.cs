@@ -1,8 +1,7 @@
-﻿using PublisherOperations.Interface;
-
+﻿
 namespace PublisherOperations.Models
 {
-    public class Question : IPrintingItem, IQuestion
+    public class Question :IQuestion
     {
         public int QuestionId { get; set; }
         public string QuestionText { get; set; }

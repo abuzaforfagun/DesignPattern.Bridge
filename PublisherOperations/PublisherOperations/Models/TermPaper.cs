@@ -1,11 +1,10 @@
-﻿using PublisherOperations.Interface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PublisherOperations.Models
 {
-    public class TermPaper : IPrintingItem
+    public class TermPaper : PrintingItem
     {
         public string Title { get; set; }
         public string StudentId { get; set; }
@@ -19,7 +18,7 @@ namespace PublisherOperations.Models
             this.Refference = refference;
             this.Description = description;
         }
-        public void Print()
+        public override void Print()
         {
             Console.WriteLine("Printing Term Paper...");
             Console.WriteLine($"Title: {Title}");
