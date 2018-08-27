@@ -6,6 +6,11 @@ namespace PublisherOperations.Models
 {
     public class QuestionBank : PrintingItem
     {
+        public QuestionBank(IFormatter formatter = null):
+            base(formatter)
+        {
+
+        }
         public string Subject { get; set; }
         public IEnumerable<IQuestion> Questions { get; set; }
         public override void Print()

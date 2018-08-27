@@ -11,7 +11,9 @@ namespace PublisherOperations.Models
         public string Refference { get; set; }
         public string Description { get; set; }
 
-        public TermPaper(string title, string studentId, string refference, string description)
+
+        public TermPaper(string title, string studentId, string refference, string description, IFormatter formatter)
+            :base(formatter = null)
         {
             this.Title = title;
             this.StudentId = studentId;
@@ -21,9 +23,9 @@ namespace PublisherOperations.Models
         public override void Print()
         {
             Console.WriteLine("Printing Term Paper...");
-            Console.WriteLine($"Title: {Title}");
-            Console.WriteLine($"Refference: {Refference}");
-            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine(Formatter.Format("Title", Title));
+            Console.WriteLine(Formatter.Format("Refference", Refference));
+            Console.WriteLine(Formatter.Format("Description", Description));
             Console.WriteLine("-------------------------------");
         }   
 
