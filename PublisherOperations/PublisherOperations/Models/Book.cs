@@ -10,7 +10,8 @@ namespace PublisherOperations.Models
         public string Author { get; set; }
         public string Description { get; set; }
 
-        public Book(string title, string author, string description)
+        public Book(string title, string author, string description, IFormatter formatter = null)
+            :base(formatter)
         {
             this.Title = title;
             this.Author = author;
